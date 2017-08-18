@@ -5,6 +5,6 @@
 layout: home
 ---
 
-[Red pages](/red)
+[Red pages](red)
 <br>
-[Blue pages](/blue)
+[Blue pages](blue)
