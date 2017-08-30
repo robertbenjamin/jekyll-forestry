@@ -1,7 +1,6 @@
 ---
 pages:
 - about.md
-- 404.md
 hide_body: false
 fields:
 - type: text

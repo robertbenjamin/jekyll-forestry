@@ -1,7 +1,4 @@
 ---
-pages:
-- _posts/cat.md
-- _posts/2017-08-30-hello.md
 hide_body: false
 fields:
 - type: text
