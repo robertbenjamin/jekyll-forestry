@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {% for collection in site.collections %}
+
+    {% assign name = collection.label %}
+
+    <section style="margin-bottom: 3em;">
+      <h1>{{ name }}</h1>
+      {% for page in site.[name] %}
+      <article>
+        <a href="{{ page.url | prepend:site.baseurl }}">{{ page.title }}</a>
+      </article>
+      {% endfor %}
+    </section>
+
+  {% endfor %}
+</div>
