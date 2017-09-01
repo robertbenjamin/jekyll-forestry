@@ -1,4 +1,6 @@
 ---
+pages:
+- _red/config-test-post.md
 hide_body: true
 fields:
 - type: text
