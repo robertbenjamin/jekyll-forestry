@@ -1,0 +1,14 @@
+---
+pages:
+- about.md
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+- type: text
+  name: layout
+  label: Layout
+- type: text
+  label: Permalink
+  name: permalink

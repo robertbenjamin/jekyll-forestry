@@ -1,0 +1,54 @@
+---
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+  description: 'This is a title field. Good for a plain ol'' string. '
+- type: field_group_list
+  label: Bus Schedules
+  name: bus_schedules
+  description: ''
+  fields:
+  - type: text
+    name: name_of_bus
+    label: Bus Name
+    default: ''
+  - type: list
+    name: tag
+    label: Red Pages
+    default: []
+    config:
+      use_select: true
+      source:
+        type: pages
+        section: red
+    description: Select from Red Pages here (as you add more Red pages, they'll show
+      up here)
+  - type: textarea
+    config:
+      wysiwyg: true
+      schema:
+        format: html
+    label: Pretty Text
+    name: pretty_text
+    description: This is a text area with WYSIWYG super powers (can also be set to
+      Markdown)
+- type: datetime
+  name: date
+  label: Date
+  description: 'This is a date field. But it''s hidden (from editors). '
+  hidden: true
+  config:
+    date_format: MM/DD/YYYY
+- type: file
+  name: image
+  label: Image
+  description: Go ahead, try dragging an image or PDF here.  Soon, we'll allow your
+    users to crop images on the fly here
+- type: text
+  name: layout
+  label: layout
+  description: This field has a default value. So all new pages will automatically
+    be set to "blue"
+  default: post

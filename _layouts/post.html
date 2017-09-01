@@ -1,0 +1,94 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+      {{ page.date | date: date_format }}
+    </time>
+  </header>
+
+  {% if page.collection == "posts" %}
+    <!-- do nothing -->
+  {% else if page.collection == "red" %}
+
+    <h1 style="background: red; color: white; padding: 10px; display: inline-block;">Red Page</h1>
+    <div class="post-content">
+      <h2>Tags</h2>
+      <ul>
+        {% for tag in page.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="post-content">
+      <h2>Textarea</h2>
+      {{ page.textarea }}
+    </div>
+
+    <div class="post-content">
+      <h2>Red Gallery</h2>
+      {% if page.red_gallery_field %}
+        {% for image in page.red_gallery_field %}
+        <img src="{{ image | prepend:site.baseurl }}" style="width: 200px;">
+        {% endfor %}
+      {% else %}
+        <em>Empty</em>
+      {% endif %}
+    </div>
+
+    <div class="post-content">
+      <h2>Related Pages (from Red Collection)</h2>
+      {% if page.select_from_related_red_pages %}
+        {{ page.select_from_related_red_pages }}
+      {% else %}
+        <em>Empty</em>
+      {% endif %}
+    </div>
+
+    <div class="post-content">
+      <h2>Boolean</h2>
+      {{ page.turned_on }}
+    </div>
+
+  {% else if page.collection == "blue" %}
+
+    <h1 style="background: blue; color: white; padding: 10px; display: inline-block;">Blue Page</h1>
+
+    <div class="post-content">
+      <h2>Bus Schedules</h2>
+      {% for bus_schedule in page.bus_schedules %}
+        <h3>Name</h3>
+        <p>{{ bus_schedule.name_of_bus }}</p>
+        <h3>Pretty Text</h3>
+        <p>{{ bus_schedule.pretty_text }}</p>
+        <h3>Related Red Pages</h3>
+        <ul>
+          {% for tag in bus_schedule.tag %}
+          <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+        <hr>
+      {% endfor %}
+    </div>
+
+    <div class="post-content">
+      <h2>Image</h2>
+      {% if page.image %}
+        <img src="{{ page.image | prepend:site.baseurl }}">
+      {% else %}
+        <em>Empty</em>
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>

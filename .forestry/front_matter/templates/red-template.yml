@@ -1,0 +1,48 @@
+---
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Title
+  default: ''
+- type: datetime
+  default: ''
+  label: Date
+  name: date
+- type: tag_list
+  name: tags
+  label: Tags
+  default:
+  - apples
+  - oranges
+- type: textarea
+  name: textarea
+  label: textarea
+  description: A text area with WYSIWYG super powers
+  default: The big WYSIWYG body editor in the right column is set to "hidden" for
+    these pages.<br><br>…Also, this field has some default text. <br>
+  config:
+    wysiwyg: true
+    schema:
+      format: html
+- type: image_gallery
+  name: red_gallery_field
+  label: 'Red Gallery '
+  description: 'FYI: You can choose an upload directory for your images in your settings'
+- type: select
+  name: select_from_related_red_pages
+  config:
+    source:
+      type: pages
+      section: red
+  label: Related pages
+  description: Select from related Red pages
+- type: boolean
+  name: turned_on
+  label: 'Is it on? '
+  description: Boolean
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+  default: post
