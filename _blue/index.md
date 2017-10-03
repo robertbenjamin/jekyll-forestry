@@ -1,7 +1,9 @@
 ---
+date: 2017-08-18 05:01:21 +0000
 layout: post
 title: Blue index
-date: 2017-08-18 05:01:21 +0000
+bus_schedules: []
+image: ''
 ---
 
 
