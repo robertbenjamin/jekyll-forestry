@@ -25,8 +25,8 @@ fields:
       source:
         type: pages
         section: blue
-    description: Select from Blue Pages here (as you add more Blue pages, they'll show
-      up here)
+    description: Select from Blue Pages here (as you add more Blue pages, they'll
+      show up here)
   - type: textarea
     config:
       wysiwyg: true
