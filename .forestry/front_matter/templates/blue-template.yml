@@ -18,14 +18,14 @@ fields:
     default: ''
   - type: list
     name: tag
-    label: Red Pages
+    label: Blue Pages
     default: []
     config:
       use_select: true
       source:
         type: pages
-        section: red
-    description: Select from Red Pages here (as you add more Red pages, they'll show
+        section: blue
+    description: Select from Blue Pages here (as you add more Blue pages, they'll show
       up here)
   - type: textarea
     config:
